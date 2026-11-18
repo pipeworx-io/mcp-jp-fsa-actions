@@ -1,0 +1,27 @@
+[
+  {
+    "name": "jp_fsa_actions_search",
+    "description": "Search the Japan Financial Services Agency's collection of administrative dispositions against financial firms (行政処分事例集: business improvement orders, business suspension orders, registration revocations and similar, issued by the agency and the Local Finance Bureaus since FY2002; ~2,800 rows covering securities and investment firms, banks, insurers and agencies, money lenders, payment and prepaid issuers): by company name in Japanese or English and/or 13-digit corporate number. Each hit is the agency's own row: fiscal year, announcement date, law cited, type and content of the order, main cause and trigger. Match is exact or partial after Unicode folding and corporate-form words are dropped. No hit means no row for that name in the collection as published on `data_as_of` (it covers dispositions the agency announced; Securities and Exchange Surveillance Commission recommendations and cases handled only by other agencies are not in it). Rows that name individuals are not served. Example: name=\"野村證券\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Company name in Japanese or English. Provide this or corporate_number."
+        },
+        "corporate_number": {
+          "type": "string",
+          "description": "13-digit 法人番号. Only entries since 2016 carry one, so a number with no hit is weaker than a name with no hit."
+        },
+        "action_type": {
+          "type": "string",
+          "description": "Optional filter on the order type, e.g. 業務停止命令, 登録取消し, 業務改善命令."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum matches returned (1-50, default 10); `total_matches` always gives the full count."
+        }
+      }
+    }
+  }
+]

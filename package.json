@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-jp-fsa-actions",
+  "version": "0.1.0",
+  "description": "jp-fsa-actions -- the Financial Services Agency (金融庁) collection of administrative dispositions it and the Local Finance Bureaus have issued against financial firms (業務改善命令, 業務停止命令, 登録取消し ...). Keyless; read live per call from the publisher (isolate cache, one hour).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-jp-fsa-actions": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "jp-fsa-actions"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-jp-fsa-actions.git"
+  },
+  "mcpName": "io.github.pipeworx-io/jp-fsa-actions",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "jp-fsa-actions",
+    "gatewaySlug": "jp-fsa-actions",
+    "sourceHash": "v1-9ff9214b2a8239853b76086a9870f6cac89004b58b8d8b60d103b478e4a5464e",
+    "sourceCommit": "48ee615c2b1233ef1f4bac25e30b36e946ff8c80"
+  }
+}
